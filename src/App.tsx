@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Clock from './components/Clock.tsx'
-import ToggleButton  from './components/ToggleButton.tsx'
+import Clock from './components/Clock'
+import ToggleButton  from './components/ToggleButton'
 
 function App() {
   const [count, setCount] = useState(0)

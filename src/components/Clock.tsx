@@ -1,7 +1,17 @@
 import React from 'react';
 
-export default class Clock extends React.Component {
-    constructor(props) {
+interface Props {
+
+}
+
+interface State {
+    date: Date;
+}
+
+export default class Clock extends React.Component<Props, State> {
+    timerID?: number;
+
+    constructor(props: Props) {
         super(props);
         this.state = {date: new Date()};
     }
