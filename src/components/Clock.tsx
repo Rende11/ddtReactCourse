@@ -1,12 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface Props {
-
+    
 }
 
 interface State {
     date: Date;
 }
+
+const ClockDiv = styled.div`
+    width: 15rem;
+`
 
 export default class Clock extends React.Component<Props, State> {
     timerID?: number;
@@ -30,7 +35,7 @@ export default class Clock extends React.Component<Props, State> {
     
     render() {
         return (
-            <div>
+            <ClockDiv>
               <h2>Now: {this.state.date.toLocaleTimeString()}</h2>
-            </div>);
+            </ClockDiv>);
     }}
