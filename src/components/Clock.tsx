@@ -10,7 +10,7 @@ interface State {
 }
 
 const ClockDiv = styled.div`
-    width: 15rem;
+    width: 20rem;
 `
 
 export default class Clock extends React.Component<Props, State> {

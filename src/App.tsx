@@ -13,7 +13,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <section className="header-section section-left">
-          <p>Hello Vite + React!</p>
           <Clock/>
           <ToggleButton content = {content} />
         </section>

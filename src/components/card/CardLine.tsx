@@ -1,19 +1,22 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import styled from "styled-components";
 
-
+/* Какой правильный тип для функции? */
 interface Props {
     label: ReactNode,
-    content: ReactNode
+    content: ReactNode,
+    onClick?: object
 }
 
 
 const Line = styled.div`
+    display: flex;
     text-align: left;
+    margin: 1px 0;
 `
 
 const Label = styled.span`
-    color: antiquewhite;
+    color: var(--grey-text-color);
 `
 
 const Content = styled.span`
@@ -23,7 +26,7 @@ const Content = styled.span`
 
 const CardLine: FunctionComponent<Props> = (props) => {
   return (
-    <Line>
+    <Line onClick={props.onClick}>
       <Label>{props.label}:</Label>
       <Content>{props.content}</Content>
     </Line>

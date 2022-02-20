@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Img = styled.img`
-    border-radius: 10px;
+    border-radius: 4px;
     width: 220px;
     height: 220px;
 `

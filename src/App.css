@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+:root {
+    --dark-orange-color:  #F17563;
+    --black: #16161a;
+    --grey:  #787878;
+    --light-gray-bg: #f5f3f0;
+    --main-bg-color: var(--dark-orange-color);
+    --secondary-bg-color: var(--light-gray-bg);
+    --main-text-color: var(--black);
+    --grey-text-color: var(--grey);
+}
+
 .App {
-  text-align: center;
+    font-family: "Abel", "sans-serif";
+    text-align: center;
+    color: var(--main-text-color);
+    
 }
 
 .App-logo {
@@ -7,36 +23,41 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #dd6a45;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+    /*   justify-content: space-evenly; */
   font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 button {
-  font-size: calc(10px + 2vmin);
+    font-size: calc(10px + 2vmin);
+    font-family: "Abel", "sans-serif";
 }
 
+
+/* Sections */
+
+.header-section {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-left {
+    background-color: var(--main-bg-color);
+    color: white;
+}
+
+.section-right {
+    background-color: var(--secondary-bg-color);
+}
