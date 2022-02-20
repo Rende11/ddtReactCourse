@@ -15,6 +15,7 @@ const CardWrapper = styled.div`
     border-radius: 4px;
     margin: 1rem;
     padding: 1rem;
+    width: 70%;
 `
 
 const ContentWrapper = styled.div`
