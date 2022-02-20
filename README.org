@@ -3,3 +3,11 @@
 Vite + Typescript
 
 ** [[https://ddt-react-course-two.vercel.app][DEMO]]
+** Useful aliases
+#+BEGIN_SRC
+make dev
+#+END_SRC
+#+BEGIN_SRC
+make build
+#+END_SRC
+
