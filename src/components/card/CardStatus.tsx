@@ -6,22 +6,22 @@ interface Props {
     content: string
 }
 
-/* type Error = string | null | undefined; 
- * 
- * interface IconProps {
- *     error: Error
- * }
- * 
- * interface TextareaProps {
- *     error: Error
- * } */
+type Error = string | null;
+
+interface IconProps {
+    error: Error
+}
+
+interface TextareaProps {
+    error: Error
+}
 
 const Status = styled.div`
     text-align: left;
     margin-right: 0.5rem;
 `
 
-const Icon = styled.i<any>`
+const Icon = styled.i<IconProps>`
     transition: transform 0.2s ease-in-out;
     flex-shrink: 0;
     margin-left: auto;
@@ -32,9 +32,9 @@ const Icon = styled.i<any>`
     }
 `
 
-const Textarea = styled.textarea<any>`
-margin-right: 1rem;
-padding: 0.5rem;
+const Textarea = styled.textarea<TextareaProps>`
+    margin-right: 1rem;
+    padding: 0.5rem;
     flex-grow: 1;
     border: ${props => props.error ?  "1px solid var(--negative-color)" : "1px solid var(--grey)"};
     border-radius: 4px;
