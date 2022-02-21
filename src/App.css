@@ -5,6 +5,7 @@
     --black: #16161a;
     --grey:  #787878;
     --light-gray-bg: #f5f3f0;
+    --negative-color: var(--dark-orange-color);
     --main-bg-color: var(--dark-orange-color);
     --secondary-bg-color: var(--light-gray-bg);
     --main-text-color: var(--black);
