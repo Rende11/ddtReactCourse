@@ -62,6 +62,7 @@ const ErrorMsg = styled.div`
 
 const textMaxLength = 30;
 const isTooLong = (text: string) => text.length > textMaxLength;
+const getErrorMessage = (text: string) => `Value to long... You need to remove ${text.length - textMaxLength} symbol(s)`
 
 const editIconClass = "fa fa-pencil fa-fw";
 const saveIconClass = "fa fa-check fa-fw";
@@ -69,7 +70,8 @@ const saveIconClass = "fa fa-check fa-fw";
 const CardStatus: FunctionComponent<Props> = (props: Props) => {
     const [editable, setEditable] = useState(false);
     const [text, setText] = useState(props.content);
-    const [error, setError] = useState<any>(isTooLong(text));
+    const initErrorMessageValue = isTooLong(text) ? getErrorMessage(text) : null;
+    const [error, setError] = useState(initErrorMessageValue);
     
     const handleClick = () => {
         if (!error) {
@@ -87,12 +89,11 @@ const CardStatus: FunctionComponent<Props> = (props: Props) => {
     };
 
     const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        console.log(error, isTooLong(text), text.length)
         let value = e.target.value;
         setText(value);
 
         if (isTooLong(value)) {
-            setError(`Value to long... You need to remove ${value.length - textMaxLength} symbol(s)`);
+            setError(getErrorMessage(value));
         } else {
             setError(null);
         }
