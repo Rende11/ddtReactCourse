@@ -30,21 +30,21 @@ const LinesWrapper = styled.div`
 `
 
 
-const UserCard: FunctionComponent<Props> = (props: Props) => {
+const UserCard: FunctionComponent<Props> = ({ userData }: Props) => {
     return (
         <CardWrapper>
           <ContentWrapper>
-            <Avatar img="https://i.pravatar.cc/220"/>
+            <Avatar img={userData.avatarUrl}/>
             <LinesWrapper>
-              <CardLine label="Name" content="John"/>
-              <CardLine label="Surname" content="Doe"/>
-              <CardLine label="Birthdate" content="Unknown"/>
-              <CardLine label="Gender" content="Both"/>
-              <CardLine label="Ceiling" content="Wooden"/>
-              <CardLine label="Mood" content="ZBS"/>
+              <CardLine label={userData.name.label} content={userData.name.content}/>
+              <CardLine label={userData.surname.label} content={userData.surname.content}/>
+              <CardLine label={userData.birthdate.label} content={userData.birthdate.content}/>
+              <CardLine label={userData.gender.label} content={userData.gender.content}/>
+              <CardLine label={userData.ceiling.label} content={userData.ceiling.content}/>
+              <CardLine label={userData.mood.label} content={userData.mood.content}/>
             </LinesWrapper>
           </ContentWrapper>
-          <CardStatus content="Only Clojure is good enough..."/>     
+          <CardStatus content={userData.status}/>
         </CardWrapper>
         
     )
