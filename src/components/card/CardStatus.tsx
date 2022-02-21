@@ -54,6 +54,9 @@ const ErrorMsg = styled.div`
 const textMaxLength = 30;
 const isTooLong = (text: string) => text.length > textMaxLength;
 
+const editIconClass = "fa fa-pencil fa-fw";
+const saveIconClass = "fa fa-check fa-fw";
+
 const CardStatus: FunctionComponent<Props> = (props: Props) => {
     const [editable, setEditable] = useState(false);
     const [text, setText] = useState(props.content);
@@ -96,7 +99,7 @@ const CardStatus: FunctionComponent<Props> = (props: Props) => {
               value={text}
              error={error}></Textarea>
           : <Status>{text}</Status>}
-          <Icon className="fa fa-pencil fa-fw" aria-hidden="true" onClick={handleClick} error={error}></Icon>
+          <Icon className={editable ? saveIconClass : editIconClass} aria-hidden="true" onClick={handleClick} error={error}></Icon>
         </TextWithButton>
         <ErrorMsg>{error}</ErrorMsg>
         </Wrapper>
