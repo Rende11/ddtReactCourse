@@ -7,7 +7,6 @@ import UserCard from './components/UserCard'
 
 
 function App() {
-  const [count, setCount] = useState(0);
     const content = <p>Made by <a href="https://github.com/Rende11/ddtReactCourse">@rende11.</a></p>;
 
     const userData = {

@@ -3,9 +3,23 @@ import styled from "styled-components";
 import Avatar from './card/Avatar';
 import CardLine from './card/CardLine';
 import CardStatus from './card/CardStatus';
-import EditableLine from './card/EditableLine';
+
+interface UserProperty {
+    label: string,
+    content: string
+}
 
 interface Props {
+    userData: {
+        avatarUrl: string,
+        name: UserProperty,
+        surname: UserProperty,
+        birthdate: UserProperty,
+        gender: UserProperty,
+        ceiling: UserProperty,
+        mood: UserProperty,
+        status: string
+    }
 }
 
 
@@ -46,7 +60,6 @@ const UserCard: FunctionComponent<Props> = ({ userData }: Props) => {
           </ContentWrapper>
           <CardStatus content={userData.status}/>
         </CardWrapper>
-        
     )
 }
 

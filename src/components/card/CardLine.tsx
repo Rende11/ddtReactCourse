@@ -5,7 +5,7 @@ import styled from "styled-components";
 interface Props {
     label: ReactNode,
     content: ReactNode,
-    onClick?: object
+    onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
 

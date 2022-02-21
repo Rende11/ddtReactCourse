@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 interface Props {
-    content: ReactNode
+    content: string
 }
 
     /*     flex-grow: 1; */
@@ -42,19 +42,18 @@ const Wrapper = styled.div`
 const CardStatus: FunctionComponent<Props> = (props: Props) => {
     const [editable, setEditable] = useState(false);
     const [text, setText] = useState(props.content);
-    const handleClick = () => {
-        console.log("click");
-        setEditable(curr => !curr);
-    };
     
-    const handleKeyUp = (e) => {
+    const handleClick = () => setEditable(curr => !curr);
+
+    const handleKeyUp = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         /* Enter key */
         if (e.keyCode === 13) {
             setEditable(false);
         }
     };
-    const handleOnChange = (e) => setText(e.target.value);
-    
+
+    const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value);
+
     return (
         <Wrapper>
           {editable
