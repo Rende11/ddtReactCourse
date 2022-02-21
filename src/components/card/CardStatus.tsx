@@ -6,13 +6,22 @@ interface Props {
     content: string
 }
 
+/* type Error = string | null | undefined; 
+ * 
+ * interface IconProps {
+ *     error: Error
+ * }
+ * 
+ * interface TextareaProps {
+ *     error: Error
+ * } */
 
 const Status = styled.div`
     text-align: left;
     margin-right: 0.5rem;
 `
 
-const Icon = styled.i`
+const Icon = styled.i<any>`
     transition: transform 0.2s ease-in-out;
     flex-shrink: 0;
     margin-left: auto;
@@ -23,7 +32,7 @@ const Icon = styled.i`
     }
 `
 
-const Textarea = styled.textarea`
+const Textarea = styled.textarea<any>`
 margin-right: 1rem;
 padding: 0.5rem;
     flex-grow: 1;
@@ -60,7 +69,7 @@ const saveIconClass = "fa fa-check fa-fw";
 const CardStatus: FunctionComponent<Props> = (props: Props) => {
     const [editable, setEditable] = useState(false);
     const [text, setText] = useState(props.content);
-    const [error, setError] = useState(isTooLong(text));
+    const [error, setError] = useState<any>(isTooLong(text));
     
     const handleClick = () => {
         if (!error) {
